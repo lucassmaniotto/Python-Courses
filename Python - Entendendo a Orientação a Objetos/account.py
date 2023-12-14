@@ -9,8 +9,12 @@ class Account:
         self.__balance += value
         print("\nDeposit of ${} done".format(value))
 
+    def __can_withdraw(self, value_to_withdraw):
+        available_value = self.__balance + self.__limit
+        return value_to_withdraw <= available_value
+
     def withdraw(self, value):
-        if(self.__balance + self.__limit < value):
+        if(not self.__can_withdraw(value)):
             print("\nThe value {} is greater than the limit".format(value))
             print("Balance: {} Limit: {}".format(self.__balance, self.__limit))
             return False
@@ -53,3 +57,6 @@ account2.statement()
 account.transfer(10.0, account2)
 account.statement()
 account2.statement()
+
+account.withdraw(1046.0)
+account.statement()
