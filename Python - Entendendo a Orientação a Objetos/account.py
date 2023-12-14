@@ -1,3 +1,5 @@
+from util.bank_codes import bank_codes
+
 class Account:
     def __init__(self, code, owner, balance, limit):
         self.__code = code
@@ -48,15 +50,9 @@ class Account:
     @limit.setter
     def limit(self, limit):
         self.__limit = limit
-    
 
-account = Account(123, "Nico", 55.0, 1000.0)
-account2 = Account(321, "Marco", 100.0, 1000.0)
-account.statement()
-account2.statement()
-account.transfer(10.0, account2)
-account.statement()
-account2.statement()
+    @staticmethod
+    def bank_code():
+        return bank_codes["BB"]
 
-account.withdraw(1046.0)
-account.statement()
+print(Account.bank_code())
