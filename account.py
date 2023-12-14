@@ -31,3 +31,7 @@ account.statement()
 account.withdraw(10000.0)
 account.withdraw(1000.0)
 account.statement()
+
+from date_formatter import Date
+date = Date(14, 10, 2000)
+date.format()
