@@ -29,6 +29,23 @@ class Account:
         destiny.deposit(value)
         print("\nTransfer of ${} done from {} to {}".format(value, self.__owner, destiny.__owner))
 
+    @property
+    def balance(self):
+        return self.__balance
+    
+    @property
+    def owner(self):
+        return self.__owner
+    
+    @property
+    def limit(self):
+        return self.__limit
+    
+    @limit.setter
+    def limit(self, limit):
+        self.__limit = limit
+    
+
 account = Account(123, "Nico", 55.0, 1000.0)
 account2 = Account(321, "Marco", 100.0, 1000.0)
 account.statement()
