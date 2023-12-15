@@ -27,3 +27,10 @@
        4. Encapsulamento
        5. Propriedades
        6. Métodos privados e estáticos
+ 2. Aprofundar na orientação a objetos
+    1. [Python: avançando na orientação a objetos](https://cursos.alura.com.br/course/python-3-avancando-orientacao-objetos)
+       1. Recapitulando classes e objetos
+       2. Herança
+       3. Polimorfismo
+       4. Duck Typing e o modelo de dados
+       5. Herança múltipla
