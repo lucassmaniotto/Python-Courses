@@ -33,4 +33,5 @@
        2. Herança
        3. Polimorfismo
        4. Duck Typing e o modelo de dados
-       5. Herança múltipla
+       5. Classes abstratas (ABCs)
+       6. Herança múltipla

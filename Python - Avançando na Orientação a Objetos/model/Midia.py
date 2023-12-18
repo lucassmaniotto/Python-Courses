@@ -1,23 +1,26 @@
-class Midia:
-    def __init__(self, title, year, likes = 0):
-        self.__title = title.title()
-        self.year = year
-        self.__likes = likes
+from abc import ABC, abstractmethod
 
+class Midia(ABC):
+    def __init__(self, title, year, likes=0):
+        self._title = title.title()
+        self.year = year
+        self._likes = likes
+
+    @abstractmethod
     def __str__(self):
-        return f'{self.__title} - {self.year} - {self.__likes} likes'
+        pass
 
     @property
     def title(self):
-        return self.__title
+        return self._title
 
     @title.setter
     def title(self, title):
-        self.__title = title
+        self._title = title
 
     @property
     def likes(self):
-        return self.__likes
+        return self._likes
 
     def like(self):
-        self.__likes += 1
+        self._likes += 1
