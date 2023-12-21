@@ -35,3 +35,9 @@
        4. Duck Typing e o modelo de dados
        5. Classes abstratas (ABCs)
        6. Herança múltipla
+    2. [String em Python: extraindo informações de uma URL](https://cursos.alura.com.br/course/string-python-extraindo-informacoes-url)
+       1. Parâmetros de URL e fatiamento de strings
+       2. Métodos de string
+       3. Aplicação de OO
+       4. Expressões regulares
+       5. Métodos especiais
