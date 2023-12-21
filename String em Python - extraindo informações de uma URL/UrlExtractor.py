@@ -40,3 +40,13 @@ class URLExtractor:
         value = self.get_url_params()[index_value:end_index]
 
         return value
+    
+    def __len__(self):
+        return len(self.url)
+    
+    def __str__(self):
+        return self.url + "\n" + "Parâmetros: " + self.get_url_params() + "\n" + "URL Base: " + self.get_base_url()
+    
+    def __eq__(self, other):
+        return self.url == other.url
+    
