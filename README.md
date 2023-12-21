@@ -41,3 +41,14 @@
        3. Aplicação de OO
        4. Expressões regulares
        5. Métodos especiais
+    3. [Python Collections parte 1: listas e tuplas](https://cursos.alura.com.br/course/python-collections-listas-e-tuplas)
+       1. Listas e operações
+       2. Tuplas e objetos
+       3. Polimorfismo e arrays
+       4. Igualdade
+       5. Builtins
+       6. Ordenação natural, customizada e total
+    4. [Python Collections parte 2: conjuntos e dicionários](https://cursos.alura.com.br/course/python-collections-conjuntos-e-dicionarios)
+       1. Conjuntos
+       2. Operações
+       3. Dicionários e variações
