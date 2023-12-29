@@ -1,6 +1,6 @@
-from Document import Document
-from Phone import Phone
-from Date import Date
+from model.Document import Document
+from model.Phone import Phone
+from model.Date import Date
 
 cnpj = "35379838000112"
 document = Document.create_document(cnpj)
