@@ -52,3 +52,11 @@
        1. Conjuntos
        2. Operações
        3. Dicionários e variações
+ 3. Trabalhar com formatos de dados
+    1. [Python Brasil: validação de dados no padrão nacional](https://cursos.alura.com.br/course/python-validacao-dados)
+       1. Validação de CPF e CNPJ
+       2. Pacotes Python
+       3. Factory
+       4. Validação de telefones com Regex
+       5. Manipulação e formatação de datas
+       6. Introdução a APIs e validação de CEP
