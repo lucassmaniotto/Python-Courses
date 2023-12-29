@@ -20,12 +20,9 @@ class DocCpf:
             raise ValueError("CPF inválido!")
 
     def cpf_is_valid(self, document):
-        if len(document) == 11:
-            validator = CPF()
-            return validator.validate(document)
-        else:
-            raise ValueError("Quantidade de dígitos inválida!")
-        
+        validator = CPF()
+        return validator.validate(document)
+    
     def format_cpf(self):
         return CPF().mask(self.cpf)
     
