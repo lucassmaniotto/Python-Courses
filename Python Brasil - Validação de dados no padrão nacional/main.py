@@ -1,7 +1,9 @@
-from Cpf import Cpf
+from Document import Document
+
+cnpj = "35379838000112"
+document = Document.create_document(cnpj)
+print(document)
 
 cpf = "01234567890"
-
-obj_cpf = Cpf(cpf)
-
-print(obj_cpf)
+document = Document.create_document(cpf)
+print(document)
