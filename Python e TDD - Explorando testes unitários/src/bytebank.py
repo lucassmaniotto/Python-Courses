@@ -42,6 +42,14 @@ class Funcionario:
         if valor > 1000:
             valor = 0
         return valor
+    
+    def _eh_diretor(self):
+        sobrenomes = ['Bragança', 'Windsor', 'Bourbon', 'Yamato', 'Al Saud', 'Khan', 'Tudor', 'Ptolomeu']
+        return self.salario >= 100000 and (self.sobrenome() in sobrenomes)
+    
+    def decrescimo_salario(self):
+        if self._eh_diretor():
+            self._salario = self._salario * 0.9
 
     def __str__(self):
         return f'Funcionario({self._nome}, {self._data_nascimento}, {self._salario})'

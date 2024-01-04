@@ -25,3 +25,71 @@ class TestClass:
 
         # Then
         assert result == expected
+
+    def test_when_decrescimo_salario_received_100000_then_return_90000(self):
+        # Given
+        entry_salary = 100000
+        entry_name = "João Bragança"
+        expected = 90000
+
+        # When
+        employee_test = Funcionario(entry_name, '01/01/2000', entry_salary)
+        employee_test.decrescimo_salario()
+        result = employee_test.salario
+
+        # Then
+        assert result == expected
+
+    def test_when_decrescimo_salario_received_10000_then_return_10000(self):
+        # Given
+        entry_salary = 10000
+        entry_name = "João Bragança"
+        expected = 10000
+
+        # When
+        employee_test = Funcionario(entry_name, '01/01/2000', entry_salary)
+        employee_test.decrescimo_salario()
+        result = employee_test.salario
+
+        # Then
+        assert result == expected
+
+    def test_when_decrescimo_salario_received_100000_then_and_not_a_director_return_100000(self):
+        # Given
+        entry_salary = 100000
+        entry_name = "João Silva"
+        expected = 100000
+
+        # When
+        employee_test = Funcionario(entry_name, '01/01/2000', entry_salary)
+        employee_test.decrescimo_salario()
+        result = employee_test.salario
+
+        # Then
+        assert result == expected
+
+    def test_when_calcular_bonus_received_1000_then_return_100(self):
+        # Given
+        entry_salary = 1000
+        entry_name = "João Silva"
+        expected = 100
+
+        # When
+        employee_test = Funcionario(entry_name, '01/01/2000', entry_salary)
+        result = employee_test.calcular_bonus()
+
+        # Then
+        assert result == expected
+
+    def test_when_calcular_bonus_received_100000_then_return_0(self):
+        # Given
+        entry_salary = 100000
+        entry_name = "João Silva"
+        expected = 0
+
+        # When
+        employee_test = Funcionario(entry_name, '01/01/2000', entry_salary)
+        result = employee_test.calcular_bonus()
+
+        # Then
+        assert result == expected
