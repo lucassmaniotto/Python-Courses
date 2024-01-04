@@ -1,4 +1,4 @@
-from UrlExtractor import URLExtractor
+from url_extractor import URLExtractor
 
 url_extractor = URLExtractor("https://bytebank.com/cambio?quantidade=100&moedaOrigem=real&moedaDestino=dolar")
 

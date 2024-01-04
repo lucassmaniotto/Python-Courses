@@ -60,3 +60,10 @@
        4. Validação de telefones com Regex
        5. Manipulação e formatação de datas
        6. Introdução a APIs e validação de CEP
+ 4. Fazer testes automatizados
+    1. [Python e TDD: explorando testes unitários](https://cursos.alura.com.br/course/python-tdd-explorando-testes-unitarios)
+       1. Testes manuais vs. testes automatizados
+       2. Pytest
+       3. Test-Driven Development
+       4. Exceptions e Marks
+       5. Cobertura de testes
