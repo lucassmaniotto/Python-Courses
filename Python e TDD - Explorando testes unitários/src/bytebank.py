@@ -40,7 +40,7 @@ class Funcionario:
     def calcular_bonus(self):
         valor = self._salario * 0.1
         if valor > 1000:
-            valor = 0
+            raise Exception(f'Bonus não pode ser maior que R$ 1000, o salário máximo é R$ 10000 | Salário informado: {self._salario}')
         return valor
     
     def _eh_diretor(self):

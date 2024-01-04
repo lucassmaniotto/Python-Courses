@@ -1,7 +1,9 @@
-import datetime
+import datetime, pytest
 from src.bytebank import Funcionario
+from pytest import mark
 
 class TestClass:
+    @mark.idade
     def test_when_idade_received_date_of_birth_then_return_age(self):
         # Given
         entry = '01/01/2000'
@@ -14,6 +16,7 @@ class TestClass:
         # Then
         assert result == expected
 
+    @mark.sobrenome
     def test_when_sobrenome_received_Lucas_Carvalho_then_return_Carvalho(self):
         # Given
         entry = 'Lucas Carvalho        '
@@ -26,6 +29,7 @@ class TestClass:
         # Then
         assert result == expected
 
+    @mark.decrescimo_salario
     def test_when_decrescimo_salario_received_100000_then_return_90000(self):
         # Given
         entry_salary = 100000
@@ -40,6 +44,7 @@ class TestClass:
         # Then
         assert result == expected
 
+    @mark.decrescimo_salario
     def test_when_decrescimo_salario_received_10000_then_return_10000(self):
         # Given
         entry_salary = 10000
@@ -54,6 +59,7 @@ class TestClass:
         # Then
         assert result == expected
 
+    @mark.decrescimo_salario
     def test_when_decrescimo_salario_received_100000_then_and_not_a_director_return_100000(self):
         # Given
         entry_salary = 100000
@@ -68,28 +74,28 @@ class TestClass:
         # Then
         assert result == expected
 
+    @mark.calcular_bonus
     def test_when_calcular_bonus_received_1000_then_return_100(self):
         # Given
-        entry_salary = 1000
-        entry_name = "João Silva"
+        entry = 1000
         expected = 100
 
         # When
-        employee_test = Funcionario(entry_name, '01/01/2000', entry_salary)
+        employee_test = Funcionario('test', '01/01/2000', entry)
         result = employee_test.calcular_bonus()
 
         # Then
         assert result == expected
 
-    def test_when_calcular_bonus_received_100000_then_return_0(self):
-        # Given
-        entry_salary = 100000
-        entry_name = "João Silva"
-        expected = 0
+    @mark.calcular_bonus
+    def test_when_calcular_bonus_received_100000_then_return_exception(self):
+        with pytest.raises(Exception):
+            # Given
+            entry = 100000
 
-        # When
-        employee_test = Funcionario(entry_name, '01/01/2000', entry_salary)
-        result = employee_test.calcular_bonus()
+            # When
+            employee_test = Funcionario('test', '01/01/2000', entry)
+            result = employee_test.calcular_bonus()
 
-        # Then
-        assert result == expected
+            # Then
+            assert result
