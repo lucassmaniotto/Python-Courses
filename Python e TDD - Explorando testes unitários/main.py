@@ -1,7 +1,8 @@
 from src.bytebank import Funcionario
+import datetime
 
 def test_age():
-    funcionario = Funcionario('João Bragança', '13/03/2000', 100000)
+    funcionario = Funcionario('João Bragança', '05/02/2000', 100000)
     print(f'Testando idade: {funcionario.idade()}')
 
     funcionario.decrescimo_salario()

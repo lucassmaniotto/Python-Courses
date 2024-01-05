@@ -15,22 +15,13 @@ class Funcionario:
         return self._salario
 
     def idade(self):
-        data_nascimento = self._data_nascimento.split('/')
-        ano_nascimento = int(data_nascimento[-1])
-        mes_nascimento = int(data_nascimento[1])
-        dia_nascimento = int(data_nascimento[0])
+        data_nasciemnto_quebrada = self._data_nascimento.split('/')
+        ano_nascimento = data_nasciemnto_quebrada[-1]
+        ano_atual = date.today().year
         
-        data_atual = date.today()
-        ano_atual = data_atual.year
-        mes_atual = data_atual.month
-        dia_atual = data_atual.day
-        idade = ano_atual - ano_nascimento
-
-        if mes_atual < mes_nascimento:
-            idade -= 1
-        elif mes_atual == mes_nascimento and dia_atual < dia_nascimento:
-            idade -= 1
-        return idade
+        if date.today().month < int(data_nasciemnto_quebrada[1]):
+            return ano_atual - int(ano_nascimento) - 1
+        return ano_atual - int(ano_nascimento)
     
     def sobrenome(self):
         nome_completo = self._nome.strip()

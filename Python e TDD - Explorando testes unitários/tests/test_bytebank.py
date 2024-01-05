@@ -1,13 +1,48 @@
+# para validar markers: pytest -v -m nome_do_marker
+# para validar o coverage: pytest --cov --cov-report term-missing
+# para validar o coverage com html: pytest --cov --cov-report html
+
 import datetime, pytest
 from src.bytebank import Funcionario
 from pytest import mark
 
 class TestClass:
+    @mark.nome
+    def test_when_nome_received_João_Silva_then_return_João_Silva(self):
+        # Given
+        entry = 'João Silva'
+        expected = 'João Silva'
+
+        # When
+        employee_test = Funcionario(entry, '01/01/2000', 1000)
+        result = employee_test.nome
+
+        # Then
+        assert result == expected
+
     @mark.idade
     def test_when_idade_received_date_of_birth_then_return_age(self):
         # Given
         entry = '01/01/2000'
         expected = datetime.date.today().year - 2000
+
+        # When
+        employee_test = Funcionario('Test', entry, 1000)
+        result = employee_test.idade()
+
+        # Then
+        assert result == expected
+
+    @mark.idade
+    def test_when_idade_received_date_of_birth_then_return_age_minus_one(self):
+        # Given
+        today_date = '04/01/2024'
+        entry = '05/02/2000'
+
+        today_date_strp = datetime.datetime.strptime(today_date, '%d/%m/%Y')
+        entry_strp = datetime.datetime.strptime(entry, '%d/%m/%Y')
+
+        expected = today_date_strp.year - entry_strp.year - 1
 
         # When
         employee_test = Funcionario('Test', entry, 1000)
